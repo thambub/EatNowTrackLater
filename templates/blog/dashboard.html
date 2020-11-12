@@ -1,0 +1,383 @@
+{% extends "blog/home.html" %}
+
+{% load static %}
+{% block content %}
+    <div class="d-flex-column">     
+            <div class="justify-content-center profile-section white-important mb-3">
+                <h3 class="white-important p-2 display-4">
+                    {{ user_profile.username }}
+                </h3>
+                <div class = "d-flex-column">
+                    <div class = "d-flex mb-3">
+                        <div class = "d-flex">        
+                            <article class="d-flex justify-content-start media content-section" style="height: 100px; width: 100%">
+                                <div class="mt-2 d-flex full-width align-items-center">
+                                    <img
+                                        class="rounded-circle mr-3 img-fluid"
+                                        style="width: 100px; height: 100px;"
+                                        src="{{ user_profile.profile.image.url }}">
+                                </div>
+                            </article>
+                        </div>
+                    
+                        <div class = "d-flex">
+                            <article class="media content-section">
+                                <div class="d-flex-column justify-content-center">
+                                    <div class="h2 ml-3 mr-5">
+                                            Age: 
+                                    </div>
+                                    <div>
+                                        <h3 class="d-flex justify-content-center white-important follow-click h1 mr-5">
+                                                {{ user_profile.profile.user_age }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class = "d-flex">
+                            <article class="d-flex justify-content-end media content-section">
+                                <div class="d-flex-column justify-content-center">
+                                    <div class="h2 mr-5">
+                                            Height: 
+                                    </div>
+                                    <div>
+                                            <h3 class="d-flex justify-content-center white-important follow-click h1 mr-5">
+                                                {{ user_profile.profile.user_height_in_inches }} in
+                                            </h3>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class = "d-flex">
+                            <article class="d-flex justify-content-end media content-section">
+                                <div class="d-flex-column justify-content-center">
+                                    <div class="h2 mr-5">
+                                            Weight: 
+                                    </div>
+                                    <div>
+                                            <h3 class="d-flex justify-content-center white-important follow-click h1 mr-5">
+                                                {{ user_profile.profile.user_weight_in_lbs }} lbs
+                                            </h3>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        <div class = "d-flex">
+                            <article class="d-flex justify-content-end media content-section">
+                                <div class="d-flex-column justify-content-center">
+                                    <div class="h2 ml-1">
+                                            Sex:
+                                    </div>
+                                    <div>
+                                            <h3 class="d-flex justify-content-center white-important follow-click h1">
+                                                {{ user_profile.profile.user_sex }}
+                                            </h3>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    
+                </div>            
+            </div>
+        <div class="d-flex"> 
+                 <div class="d-flex-column profile-section flex-basis:50% white-important mb-3 mr-3">
+                    <h3 class="white-important p-2 display-4 mr-8">
+                        Today's Progress
+                    </h3>
+                    <div class = "d-flex-column">
+                        <div class = "d-flex">                        
+                            <div class = "d-flex">
+                                <article class="media content-section">
+                                    <div class="d-flex-column justify-content-center">
+                                        <div class="h1 mr-5 mb-4">
+                                                Nutrition: 
+                                        </div>
+                                        <div class= "d-flex-column">
+                                            <div class="d-flex">
+                                                <div class="d-flex white-important h2 mr-3 ml-5">
+                                                        Protein: 
+                                                </div>
+                                                <div class="d-flex white important h2">
+                                                    {% if user_profile.profile.meat_servings_today == 0 %}
+                                                    {% elif user_profile.profile.meat_servings_today == 1 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 2 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 3 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 4 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 5 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 6 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 7 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.meat_servings_today == 8 %}
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                        <i class="fas fa-drumstick-bite text-warning mr-2 h2"></i>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="d-flex white-important h2 mr-3 ml-5">
+                                                        Grains: 
+                                                </div>
+                                                <div class="d-flex white important h2">
+                                                    {% if user_profile.profile.grains_servings_today == 0 %}   
+                                                    {% elif user_profile.profile.grains_servings_today == 1 %}
+                                                        <i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 2 %}
+                                                        <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 3 %}
+                                                        <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 4 %}
+                                                       <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 5 %}
+                                                       <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 6 %}
+                                                        <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 7 %}
+                                                       <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% elif user_profile.profile.grains_servings_today == 8 %}
+                                                        <i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i><i class="fas fa-bread-slice mr-2 h2"></i>
+                                                    {% endif %}
+                                                </div> 
+                                            </div>   
+                                            <div class="d-flex">
+                                                <div class="d-flex white-important h2 mr-3 ml-5">
+                                                        Dairy: 
+                                                </div>
+                                                <div class="d-flex white important h2">
+                                                    {% if user_profile.profile.dairy_servings_today == 0 %}   
+                                                    {% elif user_profile.profile.dairy_servings_today == 1 %}
+                                                        <i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 2 %}
+                                                            <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 3 %}
+                                                        <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 4 %}
+                                                       <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 5 %}
+                                                       <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 6 %}
+                                                        <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 7 %}
+                                                       <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% elif user_profile.profile.dairy_servings_today == 8 %}
+                                                        <i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i><i class="fas fa-cheese text-warning mr-2 h2"></i>
+                                                    {% endif %}
+                                                </div> 
+                                            </div>   
+                                            <div class="d-flex">
+                                                <div class="d-flex white-important h2 mr-3 ml-5">
+                                                        Vegetables: 
+                                                </div>
+                                                <div class="d-flex white important h2">
+                                                    {% if user_profile.profile.grains_servings_today == 0 %}   
+                                                    {% elif user_profile.profile.vegetables_servings_today == 1 %}
+                                                        <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 2 %}
+                                                        <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 3 %}
+                                                        <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 4 %}
+                                                       <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 5 %}
+                                                       <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 6 %}
+                                                        <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 7 %}
+                                                       <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% elif user_profile.profile.vegetables_servings_today == 8 %}
+                                                    <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  <i class="fas fa-seedling h2 text-success mr-2"></i>  
+                                                    {% endif %}
+                                                </div> 
+                                            </div>   
+                                            <div class="d-flex mb-4">
+                                                <div class="d-flex white-important h2 mr-3 ml-5">
+                                                        Fruit: 
+                                                </div>
+                                                <div class="d-flex white important h2">
+                                                    {% if user_profile.profile.fruit_servings_today == 0 %}   
+                                                    {% elif user_profile.profile.fruit_servings_today == 1 %}
+                                                        <i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 2 %}
+                                                        <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 3 %}
+                                                        <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 4 %}
+                                                       <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 5 %}
+                                                       <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 6 %}
+                                                        <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 7 %}
+                                                       <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% elif user_profile.profile.fruit_servings_today == 8 %}
+                                                        <i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i><i class="fas fa-apple-alt text-danger h2 mr-2"></i>
+                                                    {% endif %}
+                                                </div> 
+                                            </div>   
+                                        </div>
+                                        <div class="h1 mr-5 mb-4">
+                                                Exercise: 
+                                        </div>
+                                        <div class="d-flex-column">
+                                            <div class="d-flex">
+                                                    <div class="d-flex white-important h2 mr-3 ml-5">
+                                                            Aerobic Activity: 
+                                                    </div>
+                                                    <div class="d-flex white-important h2">
+                                                        {% if user_profile.profile.minutes_aerobic_activity_today == 0 %}  
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 15 %} 
+                                                            <i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 30 %} 
+                                                            <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 45 %} 
+                                                            <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 60 %} 
+                                                            <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 75 %} 
+                                                             <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i>{{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_today <= 90 %} 
+                                                           <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        {% else %} 
+                                                            <i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i><i class="fas fa-running text-primary mr-2 h1"></i> {{user_profile.profile.minutes_aerobic_activity_today}} mins
+                                                        
+                                                        {% endif %}
+                                                    </div> 
+                                           </div>
+                                            <div class="d-flex">
+                                                    <div class="d-flex white-important h2 mr-3 ml-5">
+                                                            Muscle Strengthening: 
+                                                    </div>
+                                                    <div class="d-flex white-important h2">
+                                                        {% if user_profile.profile.minutes_weightlifting_activity_today == 0 %}  
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 15 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 30 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 45 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 60 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 75 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_today <= 90 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        {% else %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i> {{user_profile.profile.minutes_weightlifting_activity_today}} mins
+                                                        
+                                                        {% endif %}
+                                                    </div> 
+                                            </div>
+                                        </div>
+                                        </div>   
+                                    </div>
+                                </article>
+                            </div>
+                        </div>  
+                    </div> 
+            <div class="d-flex-column profile-section flex-basis:50% white-important mb-3">
+                    <h3 class="white-important p-2 display-4 mb-3">
+                        This Week
+                    </h3>
+                    <div class = "d-flex-column">
+                        <div class = "d-flex">
+                                        <div class="d-flex_column">
+                                            <div class="d-flex-column mb-6">
+                                                    <div class="d-flex">
+                                                        <div class="d-flex h1 mr-3 ml-2 mb-4">
+                                                                Aerobic Activity:
+                                                        </div>
+                                                        <div class="d-flex white-important h1">
+                                                            {{user_profile.profile.minutes_aerobic_activity_week}} mins
+                                                        </div> 
+                                                    </div>
+                                                    <div class="d-flex white-important h1">
+                                                        {% if user_profile.profile.minutes_aerobic_activity_week <= 25 %} 
+                                                         <i class="fas fa-running text-secondary mr-2 display-4"></i> <i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_week <= 50 %}
+                                                            <i class="fas fa-running text-primary mr-2 display-4"></i> <i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_week <= 75 %} 
+                                                            <i class="fas fa-running text-primary mr-2 display-4"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_week <= 100 %} 
+                                                           <i class="fas fa-running text-primary mr-2 display-4"></i> <i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_week <= 125 %} 
+                                                            <i class="fas fa-running text-primary mr-2 display-4"></i> <i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-secondary mr-2 display-4"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% elif user_profile.profile.minutes_aerobic_activity_week <= 150 %} 
+                                                             <i class="fas fa-running text-primary mr-2 display-4"></i> <i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-secondary mr-2 display-4 mr-3"></i> Goal: 150 mins
+                                                        {% else %} 
+                                                            <i class="fas fa-running text-primary mr-2 display-4"></i> <i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i><i class="fas fa-running text-primary mr-2 display-4 mr-3"></i> Goal Complete!!
+                                                        
+                                                        {% endif %}
+                                                    </div>
+                                            </div>
+                                            <div class="d-flex-column mt-5 mb-2">
+                                                <div class="d-flex">
+                                                    <div class="d-flex h1 mr-3 ml-2 mb-4">
+                                                            Muscle Strengthening:
+                                                    </div>
+                                                    <div class="d-flex white-important h1">
+                                                        {{user_profile.profile.minutes_weightlifting_activity_week}} mins
+                                                        
+                                                    </div> 
+                                                </div>
+                                                <div class="d-flex white-important h1">
+                                                        {% if user_profile.profile.minutes_weightlifting_activity_week <= 10 %} 
+                                                         <i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_week <= 20 %}
+                                                           <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_week <= 30 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_week <= 40 %} 
+                                                           <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 dh1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_week <= 50 %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% elif user_profile.profile.minutes_weightlifting_activity_week <= 60 %} 
+                                                             <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-secondary mr-2 h1 mr-3"></i> Goal: 60 mins
+                                                        {% else %} 
+                                                            <i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1"></i><i class="fas fa-dumbbell text-warning mr-2 h1 mr-3"></i> Goal Complete!!
+                                                        
+                                                        {% endif %}
+                                                    </div>
+                                            </div>
+                                        </div>              
+            </div>
+        </div>        
+    </div>
+{% endblock content %}
